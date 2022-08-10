@@ -7,10 +7,11 @@ let parser = new Parser({
   },
 });
 
+const rssUrl =
+  "https://www.youtube.com/feeds/videos.xml?playlist_id=PL2yzO4BDk7OuTWsq4004KBp-7xjYAL-wZ";
+
 (async () => {
-  let feed = await parser.parseURL(
-    "https://www.youtube.com/feeds/videos.xml?playlist_id=PL2yzO4BDk7OuTWsq4004KBp-7xjYAL-wZ"
-  );
+  let feed = await parser.parseURL(rssUrl);
   console.log(feed.title);
 
   feed.items.forEach((item) => {
